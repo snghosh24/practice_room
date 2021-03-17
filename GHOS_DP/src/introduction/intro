@@ -1,0 +1,50 @@
+
+DP is enhanced Recursion
+i.e parent of DP is recursion.
+
+How to identify a DP:
+=====================
+1. There will be a choice: which one to add and which one not to add.
+   Then there will be a requirement of Recursion. and if the recursion 
+   is having overlapping sub problems then DP is required.
+   
+   *If recursive function is calling itself 2 times then there is a chance 
+   of requirement of DP. If recursive function is calling itself 1 time
+   then there is no chance of requirement of DP
+
+2. Optimal things will be asked.
+   i.e Minimum, Maximum, Largest these kind of things will be asked.
+   
+ How to write a DP solution:
+ ===========================
+ 1. First write the recursive solution.(as recursion is parent of DP)
+ 2. Then memoized it
+ 3. Then if you wish, go for top down
+ 
+ 
+ 					    |--> Memoization
+ Recursive function  -->|
+ 					    |--> Top-down
+ 					    
+ So our approach will be:
+ ========================
+1. to write recursive solution
+2. to memoize
+3. then go for top down
+* for famous problems we will be directly approaching top-down
+
+
+DP Parent Questions:
+====================
+1. 0-1 knapsack --> 6 problems
+2. Unbounded knapsack --> 5 problems
+3. Fibonacci --> 7 problems
+4. LCS --> 15 problems
+5. LIS --> 10 problems
+6. Kadane's Algo --> 6 problems
+7. Matrix chain multiplication --> 7 problems
+8. Tree --> 4 problems
+9. DP on Grid --> 4 problems
+10. Others --> 5 problems
+  
+  
