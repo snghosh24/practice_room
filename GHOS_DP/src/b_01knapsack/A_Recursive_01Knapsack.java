@@ -1,6 +1,6 @@
 package b_01knapsack;
 
-public class Recursive_01Knapsack {
+public class A_Recursive_01Knapsack {
 
 	static int max(int a, int b) {
 		return (a > b) ? a : b;

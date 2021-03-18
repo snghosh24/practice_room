@@ -80,6 +80,31 @@ If In(nth item) is selected to put on knapsack then we have to check
 	
 	else    i.e w[n-1]>W then try selecting from the reduced size array
 	
+
+Memoization(or Top-down):
+=========================
+1. initialize a static DP[][] matrix and initialized it with -1.
+2. after base condition if DP[n][W] is having some valid value then return it.
+3. in other case calculate the result using recursion and store that in DP[][] matrix
+
+	public static int knapsack(int w[], int val[], int W, int n) {
+
+		if (n == 0 || W == 0) {
+			return 0;
+		}
+		
+		 if (DP[n][W] != -1)											//change-3
+		        return DP[n][W];
+
+		if (w[n - 1] <= W) {
+			return DP[n][W]= max(val[n - 1] + knapsack(w, val, W - w[n - 1], n - 1), knapsack(w, val, W, n - 1));
+		} else {
+			return DP[n][W]=knapsack(w, val, W, n - 1);
+		}
+		
+		//store the result in DP and then returned
+	  }
 	
-	
-	
+
+Tabulation(or Buttom-up):
+=========================

@@ -3,9 +3,9 @@ package b_01knapsack;
 import java.util.Arrays;
 
 //Memoization or Top-down approach
-public class Memoization_01Knapsack {
+public class B_Memoization_01Knapsack {
 	
-	static int DP[][];
+	static int DP[][];                                                  //change-1
 	
 	static int max(int a, int b) {
 		return (a > b) ? a : b;
@@ -17,7 +17,7 @@ public class Memoization_01Knapsack {
 			return 0;
 		}
 		
-		 if (DP[n][W] != -1)
+		 if (DP[n][W] != -1)											//change-3
 		        return DP[n][W];
 
 		if (w[n - 1] <= W) {
@@ -25,6 +25,8 @@ public class Memoization_01Knapsack {
 		} else {
 			return DP[n][W]=knapsack(w, val, W, n - 1);
 		}
+		
+		//change-4: stored the result in DP and then returned
 	}
 
 	public static void main(String[] args) {
@@ -34,8 +36,8 @@ public class Memoization_01Knapsack {
 		int W = 7;
 		int n = val.length;
 
-		DP=new int[n+1][W+1];
-		
+		DP=new int[n+1][W+1];								//change-2: initialized DP with -1
+															// size of the DP will be based on the variables which are not constant
 		for(int i = 0; i < n + 1; i++)   
 	        for(int j = 0; j < W + 1; j++)   
 	            DP[i][j] = -1;  
@@ -51,4 +53,7 @@ Max profit=16
 
 Time complexity:O(n*W).
 Auxiliary Space complexity: O(n*W).
+
+Drawback of this approach can be that it might cause function stack overflow due to recursive call
+Then we go for bottom-up approach for that.
 */
