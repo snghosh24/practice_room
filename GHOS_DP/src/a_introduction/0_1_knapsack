@@ -17,6 +17,69 @@ Why DP is required to solve the problem
 2. Optimal things will be asked:Max profit is asked as output 
 
 
-Identifying the Recursive solution:
-===================================
 
+
+Choice Diagram:
+===============
+If In(nth item) is selected to put on knapsack then we have to check
+
+ 					                |--> if w[n-1]> W    then don't pick the item
+ w[n-1] i.e weight of the (n-1)th item -->|
+ 					                |--> if w[n-1]<=W    then wither we can pick or don't pick
+ 					                
+ W= capacity 
+ n= length of the array
+ 
+ we will be selecting items from the last(n-1) to first(index 0)
+ 
+ Identifying the Recursive solution:
+====================================
+
+	public int knapsack(int w[], int val[], int W, int n){
+	
+		(code for Base condition)
+		
+		(code for Choice Diagram)
+	}
+	
+	n= size of the array
+	
+  |===========================================================================|	
+  |Effective way to identify Base Condition: Think of the smallest valid input|
+  |===========================================================================|
+	
+	Base condition code:
+	===============
+	if(n==0 || W==0){
+	 return 0;
+	}
+	
+	if capacity is there but no item available to pick(i.e n=0) then profit will be 0.
+	if items are available but there is no capacity of knapsack(i.e W=0), then the profit will be 0.
+	
+	Choice Diagram Code:
+	====================
+	if(w[n-1]<= W){
+		return max(val[n - 1]+ knapsack(w,val, W - w[n - 1], n - 1),knapsack(w, val, W, n - 1));      
+	}
+	else{
+	    return knapsack(w, val, W, n-1);  
+	}
+	
+	explanation:
+	============
+	if w[n-1]<= W 
+		then we have 2 option--> pick or don't pick
+	
+			if picked--> val[n - 1]+ knapSack(w,val, W - w[n - 1], n - 1)    
+			add  val[n-1] in profit and call knapsack() from the reduced size array
+			W will be reduced as item is picked.
+			
+			if not picked --> knapSack(w, val, W, n - 1))        
+			select items from the reduced size array
+	
+	else    i.e w[n-1]>W then try selecting from the reduced size array
+	
+	
+	
+	
