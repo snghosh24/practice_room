@@ -30,3 +30,11 @@ public class Recursive_01Knapsack {
 	}
 
 }
+
+/*
+output:
+Max profit=16
+
+Time complexity:O(2^n).
+Auxiliary Space complexity: O(1). 
+*/
