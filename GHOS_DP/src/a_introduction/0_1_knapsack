@@ -1,0 +1,22 @@
+0-1 knapsack:
+=============
+
+input:
+suppose there are items: I1, I2, I3, I4, I5
+ 
+there is a weight array w[]={2,4,2,5,1}
+there is a value array  v[]={5,3,4,2,7}
+
+and there is a W denotes the capacity of knapsack. 
+suppose W=7
+
+output: Max profit
+
+Why DP is required to solve the problem
+1. Choice will be given: either In(nth item) will be added or not
+2. Optimal things will be asked:Max profit is asked as output 
+
+
+Identifying the Recursive solution:
+===================================
+

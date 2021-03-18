@@ -1,0 +1,54 @@
+
+0-1 Knapsack problems
+=====================
+1. Subset sum
+2. Equal sum partition
+3. Count of subset sum
+4. Minimum subset sum diff
+5. Target sum
+6. Number of subset on given diff
+
+
+
+What is knapsack problem:
+=========================
+
+suppose there are items: I1, I2, I3, I4, I5
+ 
+there is a weight array w[]={2,4,2,5,1}
+there is a value array  v[]={5,3,4,2,7}
+
+and there is a W denotes the capacity of knapsack. 
+suppose W=7
+i.e knapsack can hold maximum 7kgs of items.
+
+now we need to select items of 7kgs to get maximum profit.
+
+I1+I2+I5=w[1]+w[2]+w[5]= 2+4+1= 7                      (array index start from=1)
+profit1=v[1]+v[2]+v[5]=5+3+7= 15
+
+I2+I3+I5=w[2]+w[3]+w[5]= 4+2+1= 7                      (array index start from=1)
+profit2=v[2]+v[3]+v[5]=3+4+7= 14
+
+I1+I4=w[1]+w[4]= 2+5= 7                                (array index start from=1)
+profit3=v[3]+v[4]=5+2= 7
+
+I3+I4=w[3]+w[4]= 2+5= 7                                (array index start from=1)
+profit4=v[3]+v[4]=4+2= 6
+
+
+I1+I3+I5=w[1]+w[3]+w[5]= 2+2+1= 5                      (array index start from=1)
+profit5=v[1]+v[3]+v[5]=5+4+7= 16
+
+so the Max profit=16 al though the bag is not full
+
+for I1 & I3 even though the weights are same we are selecting I3 as its value is higher
+and will produce more profits.
+
+
+Types of knapsack:
+==================
+1. Fractional knapsack: greedy approach( we can add fraction of items to get the max profit)
+2. 0-1 knapsack: DP ( we can add only a whole item. choice will be made on this condition)
+3. Unbounded knapsack: ( we can put more than one instance of similar items to get max profit)
+
