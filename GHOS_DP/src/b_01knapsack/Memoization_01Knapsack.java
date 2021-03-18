@@ -35,9 +35,11 @@ public class Memoization_01Knapsack {
 		int n = val.length;
 
 		DP=new int[n+1][W+1];
+		
 		for(int i = 0; i < n + 1; i++)   
 	        for(int j = 0; j < W + 1; j++)   
 	            DP[i][j] = -1;  
+		
 		System.out.println("Max profit=" + knapsack(w, val, W, n));
 	}
 
