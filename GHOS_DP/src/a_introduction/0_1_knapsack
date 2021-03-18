@@ -83,7 +83,7 @@ If In(nth item) is selected to put on knapsack then we have to check
 
 Memoization(or Top-down):
 =========================
-1. initialize a static DP[][] matrix and initialized it with -1.
+1. initialize a static DP[n+1][W+1] matrix and initialized it with -1.
 2. after base condition if DP[n][W] is having some valid value then return it.
 3. in other case calculate the result using recursion and store that in DP[][] matrix
 
@@ -108,3 +108,70 @@ Memoization(or Top-down):
 
 Tabulation(or Buttom-up):
 =========================
+1. process of calling recursive function and store the value in DP[][] is omitted in Tabulation
+2. only DP[][] table will be used without any recursive call.
+
+
+	So the basic way is:
+	====================
+	1. initialize the 0th columns and 0th rows( base condition changes to initialization)
+	2. convert the recursive call to iterative way to fill rest of the places
+	** each of the places will hold the value of sub problems
+	
+	Suppose we have n=4 and W=10
+	DP[3][5] denotes the result(max profit) for the knapsack if the size of the array is 3 
+	and the capacity of the knapsack is 5.
+	i.e input will be
+	w[]={2,4,2};
+	v[]={5,3,4};
+	W=5
+	
+	using these sub problems we can derive DP[4][10] to find the final solution.
+	
+	=================================
+	This is using recursive function:
+	=================================
+	public static int knapsack(int w[], int val[], int W, int n) {
+
+		if (n == 0 || W == 0) {
+			return 0;
+		}
+		
+		 if (DP[n][W] != -1)											//change-3
+		        return DP[n][W];
+
+		if (w[n - 1] <= W) {
+			return DP[n][W]= max(val[n - 1] + knapsack(w, val, W - w[n - 1], n - 1), knapsack(w, val, W, n - 1));
+		} else {
+			return DP[n][W]=knapsack(w, val, W, n - 1);
+		}
+		
+		//store the result in DP and then returned
+	  }
+	  
+	  ===================
+	  Buttom-up approach:
+	  ===================
+	  
+	  public static int knapsack(int w[], int val[], int W, int n) {
+
+		int DP[][]=new int[n+1][W+1];
+		
+		for(int i=0;i<n;i++){
+			for(int j=0; j<W; j++){
+			   
+			   if(i==0||j==0){
+			     DP[i][j]=0;
+					
+					
+				//replace n with i and W with j and knapsack with DP
+				if (w[i - 1] <= j) {
+				    DP[i][j]= max(val[i - 1] + DP[[i - 1], j - w[i - 1]], DP[i - 1][j]);
+				} else {
+					return DP[i][j]=DP[i - 1][j]);
+				}
+		
+		//store the result in DP and then returned
+	  }
+	
+	
