@@ -168,7 +168,7 @@ Tabulation(or Buttom-up):
 				if (w[i - 1] <= j) {
 				    DP[i][j]= max(val[i - 1] + DP[[i - 1], j - w[i - 1]], DP[i - 1][j]);
 				} else {
-					return DP[i][j]=DP[i - 1][j]);
+					DP[i][j]=DP[i - 1][j]);
 				}
 		
 		//store the result in DP and then returned
