@@ -79,7 +79,8 @@ public class H_CountOfSubsetsSum_WithGivenDifference {
 
 /*
  input:
- arr[]={ 1,1,2,3 } diff=1
+ arr[]={ 1,1,2,3 } 
+ diff=1
  
  output: 
  Count of Subset Sum with diff '1'=3 

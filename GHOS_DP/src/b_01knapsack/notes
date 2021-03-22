@@ -52,3 +52,11 @@ Types of knapsack:
 2. 0-1 knapsack: DP ( we can add only a whole item. choice will be made on this condition)
 3. Unbounded knapsack: ( we can put more than one instance of similar items to get max profit)
 
+Problems:
+1. Subset sum problem
+2. Equal sum partition problem
+3. Count of subsets sum with given sum
+4. Minimum subset sum diff
+5.  Count of subsets sum with given diff
+6. Target sum
+
