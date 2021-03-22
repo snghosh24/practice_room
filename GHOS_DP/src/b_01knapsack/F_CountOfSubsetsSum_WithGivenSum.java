@@ -4,7 +4,7 @@ Problem statement:
 an array will be given i.e arr[]={2,3,5,6,8,10};
 a sum will be given. sum=10
 
-How many subset of the given array is possible with the given sum.
+How many subset of the given array is possible with the given sum?
 
 Initialization of DP[][]:
 for a valid target sum with 0 elements in the array is not possible
