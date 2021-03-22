@@ -83,9 +83,7 @@ public class G_MinimumSubsetSumDifference {
 
 					DP[i][j] = DP[i - 1][j];
 				}
-				System.out.print(DP[i][j]+ " ");
 			}
-			System.out.println();
 		}
 		
 		boolean lastRow[]=new boolean[sum];
@@ -112,3 +110,18 @@ public class G_MinimumSubsetSumDifference {
 	}
 
 }
+
+/*
+sum=10
+true false false false false false false false false false false
+true true  false false false false false false false false false 
+true true  true  true  false false false false false false false 
+true true  true  true  false false false true  true  true  true 
+
+range-2*s1=10-2*0=10     for i=0
+range-2*s1=10-2*1=8      for i=1
+range-2*s1=10-2*2=6      for i=2
+range-2*s1=10-2*3=4      for i=3
+
+Minimum subset sum diff=4
+*/

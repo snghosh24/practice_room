@@ -19,7 +19,7 @@ public class F_CountOfSubsetsSum_WithGivenSum {
 	
 
 	
-	public static int countOfSubsetSum(int arr[], int sum, int n) {
+	public static int countOfSubsetSumWithGivenSum(int arr[], int sum, int n) {
 
 		int DP[][] = new int[n + 1][sum + 1];
 
@@ -59,7 +59,7 @@ public class F_CountOfSubsetsSum_WithGivenSum {
 		int sum = 12;
 		int n = arr.length;
 
-		System.out.println("Count of Subset Sum :" + countOfSubsetSum(arr, sum, n));
+		System.out.println("Count of Subset Sum :" + countOfSubsetSumWithGivenSum(arr, sum, n));
 	}
 
 }
