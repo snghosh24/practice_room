@@ -1,0 +1,23 @@
+0-1 Knapsack:
+=============
+if(w[n - 1] <= W)
+1. If we consider the element to pick, then it's processed and we will be moving to next element
+	val[n - 1] + knapsack(w, val, W - w[n - 1], n - 1)
+2. If we consider not to pick the element then also it's processed and we will be moving to next element
+	knapsack(w, val, W, n - 1);
+	
+if(w[n-1]>W)
+1. we consider not to pick the element then also it's processed and we will be moving to next element
+	knapsack(w, val, W, n - 1);
+	
+Unbounded Knapsack:
+===================
+if(w[n - 1] <= W)
+1. If we consider the element to pick, then it's not processed and we reconsider the next element again
+	val[n - 1] + knapsack(w, val, W - w[n - 1], n)
+2. If we consider not to pick the element then also it's processed and we will be moving to next element
+	knapsack(w, val, W, n - 1);
+	
+if(w[n-1]>W)
+1. we consider not to pick the element then also it's processed and we will be moving to next element
+	knapsack(w, val, W, n - 1);
