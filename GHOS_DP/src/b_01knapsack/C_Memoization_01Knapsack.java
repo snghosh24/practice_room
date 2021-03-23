@@ -1,6 +1,6 @@
 package b_01knapsack;
 
-//Tabulation of Bottom-Up approach
+//Memoization of Top-down approach
 public class C_Memoization_01Knapsack {
 
 	static int max(int a, int b) {

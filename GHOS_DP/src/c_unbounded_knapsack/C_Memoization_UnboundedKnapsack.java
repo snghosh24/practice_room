@@ -1,5 +1,5 @@
 package c_unbounded_knapsack;
-
+//Memoization or Top-down approach
 public class C_Memoization_UnboundedKnapsack {
 
 	static int max(int a, int b) {

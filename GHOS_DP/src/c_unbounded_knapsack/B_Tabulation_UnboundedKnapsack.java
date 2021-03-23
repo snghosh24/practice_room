@@ -1,5 +1,5 @@
 package c_unbounded_knapsack;
-
+//Tabulation or Bottom-up approach
 public class B_Tabulation_UnboundedKnapsack {
 
 	static int DP[][];                                                  //change-1

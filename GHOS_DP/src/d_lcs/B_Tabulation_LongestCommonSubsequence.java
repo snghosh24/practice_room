@@ -1,5 +1,5 @@
 package d_lcs;
-
+// Bottom-up
 public class B_Tabulation_LongestCommonSubsequence {
 
 	static int[][] DP;
