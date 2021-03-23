@@ -1,7 +1,7 @@
 package b_01knapsack;
 
-//Memoization of Top-down approach
-public class C_Memoization_01Knapsack {
+//Tabulation or Bottom-up approach
+public class C_Tabulation_01Knapsack {
 
 	static int max(int a, int b) {
 		return (a > b) ? a : b;

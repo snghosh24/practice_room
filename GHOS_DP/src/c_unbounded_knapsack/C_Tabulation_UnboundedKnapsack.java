@@ -1,6 +1,6 @@
 package c_unbounded_knapsack;
-//Memoization or Top-down approach
-public class C_Memoization_UnboundedKnapsack {
+//Tabulation or Bottom-up approach
+public class C_Tabulation_UnboundedKnapsack {
 
 	static int max(int a, int b) {
 		return (a > b) ? a : b;

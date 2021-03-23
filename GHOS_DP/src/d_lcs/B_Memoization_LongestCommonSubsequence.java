@@ -1,6 +1,6 @@
 package d_lcs;
-// Bottom-up
-public class B_Tabulation_LongestCommonSubsequence {
+//Memoization of Top-down approach
+public class B_Memoization_LongestCommonSubsequence {
 
 	static int[][] DP;
 	
