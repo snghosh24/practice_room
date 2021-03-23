@@ -1,6 +1,7 @@
-package c_unbounded_knapsack;
+package b_01knapsack;
 
-public class C_Tabulation_UnboundedKnapsack {
+//Tabulation of Bottom-Up approach
+public class C_Memoization_01Knapsack {
 
 	static int max(int a, int b) {
 		return (a > b) ? a : b;
@@ -19,8 +20,7 @@ public class C_Tabulation_UnboundedKnapsack {
 				}
 
 				else if (w[i - 1] <= j) {
-					//DP[i][j] = max(val[i - 1] + DP[i-1][j - w[i - 1]], DP[i - 1][j]);
-					DP[i][j] = max(val[i - 1] + DP[i][j - w[i - 1]], DP[i - 1][j]);
+					DP[i][j] = max(val[i - 1] + DP[i - 1][j - w[i - 1]], DP[i - 1][j]);
 				} else {
 					DP[i][j] = DP[i - 1][j];
 				}
@@ -33,11 +33,19 @@ public class C_Tabulation_UnboundedKnapsack {
 
 	public static void main(String[] args) {
 
-		int w[] =   { 2, 4, 2, 5, 3 };
+		int w[] = { 2, 4, 2, 5, 1 };
 		int val[] = { 5, 3, 4, 2, 7 };
 		int W = 7;
 		int n = val.length;
 
 		System.out.println("Max profit=" + knapsack(w, val, W, n));
 	}
+
 }
+/*
+output:
+Max profit=16
+
+Time Complexity: O(N*W)
+Auxiliary Space: O(N*W). 
+*/

@@ -1,10 +1,7 @@
-package b_01knapsack;
+package c_unbounded_knapsack;
 
-import java.util.Arrays;
+public class B_Tabulation_UnboundedKnapsack {
 
-//Memoization or Top-down approach
-public class B_Memoization_01Knapsack {
-	
 	static int DP[][];                                                  //change-1
 	
 	static int max(int a, int b) {
@@ -21,7 +18,8 @@ public class B_Memoization_01Knapsack {
 		        return DP[n][W];
 
 		if (w[n - 1] <= W) {
-			return DP[n][W]= max(val[n - 1] + knapsack(w, val, W - w[n - 1], n - 1), knapsack(w, val, W, n - 1));
+			//return DP[n][W]= max(val[n - 1] + knapsack(w, val, W - w[n - 1], n - 1), knapsack(w, val, W, n - 1));
+			return DP[n][W]= max(val[n - 1] + knapsack(w, val, W - w[n - 1], n ), knapsack(w, val, W, n - 1));
 		} else {
 			return DP[n][W]=knapsack(w, val, W, n - 1);
 		}
@@ -46,14 +44,3 @@ public class B_Memoization_01Knapsack {
 	}
 
 }
-
-/*
-output:
-Max profit=16
-
-Time complexity:O(n*W).
-Auxiliary Space complexity: O(n*W).
-
-Drawback of this approach can be that it might cause function stack overflow due to recursive call
-Then we go for bottom-up approach for that.
-*/
