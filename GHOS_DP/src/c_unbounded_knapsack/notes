@@ -21,3 +21,11 @@ if(w[n - 1] <= W)
 if(w[n-1]>W)
 1. we consider not to pick the element then also it's processed and we will be moving to next element
 	knapsack(w, val, W, n - 1);
+	
+	
+Problems:
+=========
+1. Rod cutting problem
+2. Coin change-I
+3. Coin change-II
+4. Maximum ribbon cut
