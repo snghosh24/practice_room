@@ -1,5 +1,5 @@
 package d_lcs;
-//Memoization of Top-down approach
+//Memoization or Top-down approach
 public class B_Memoization_LongestCommonSubsequence {
 
 	static int[][] DP;
