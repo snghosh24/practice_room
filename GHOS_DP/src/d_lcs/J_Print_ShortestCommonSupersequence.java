@@ -15,7 +15,7 @@ find the lcs of two given strings "aggtab" & "gxtxayb" which is: "gtab"
 follow Print LCS with 
 */
 
-public class Print_ShortestCommonSupersequence {
+public class J_Print_ShortestCommonSupersequence {
 
 	static int max(int a, int b) {
 		return (a > b) ? a : b;
