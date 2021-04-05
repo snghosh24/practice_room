@@ -24,7 +24,7 @@ public class E_Print_LongestCommonSubsequence_II {
             System.out.println();
         } 
         
-        //Print subsequence
+        //lcs print code
         int i=m;
         int j=n;
         String result="";
@@ -35,7 +35,7 @@ public class E_Print_LongestCommonSubsequence_II {
         		j--;
         	}
         	else {
-        		if(DP[i][j-1]>=DP[i][j]) {
+        		if(DP[i][j-1]>=DP[i-1][j]) {
         			j--;
         		}
         		else {
