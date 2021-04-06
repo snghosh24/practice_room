@@ -1,21 +1,10 @@
 package e_mcm;
-/*
-Problem statement:
-a string will be given: "abaabb"
-To find: minimum number of partitions required to find palindromic substrings ot of the given string
 
-a|b|a|a|b|b -->5
-aba|a|b|b --> 4
-aba|a|bb -->3
-a|baab|b -->3
-a|b|aa|bb --> 4    etc
+import java.util.Arrays;
 
-So, minimum no of partition required=3
+public class E_Memoization_PalindromePartitioning {
 
-i>=j means either string is empty or string hash only one character
-
- */
-public class D_Recursive_PalindromePartitioning {
+	static int[][] DP = new int[100][100];// this size will be depend on constraint
 	
 	public static boolean isPalindrome(String s,int i, int j) {
 		
@@ -40,6 +29,10 @@ public class D_Recursive_PalindromePartitioning {
 			return 0;
 		}
 		
+		if (DP[i][j] != -1) {
+			return DP[i][j];
+		}
+		
 		int result=Integer.MAX_VALUE;
 		
 		for(int k=i; k<=j-1;k++) {
@@ -52,21 +45,24 @@ public class D_Recursive_PalindromePartitioning {
 			
 		}
 		
-		return result;
+		return DP[i][j]=result;
 	}
 	
 	public static void main(String[] args) {
 
 
-		String s="abaabb";
+		String s="nitin";
+		
+
+		for (int[] row : DP)
+			Arrays.fill(row, -1);
 		
 		System.out.println("Minimum partition Required: "+palindromePartition(s, 0, s.length()-1));
 
 	}
-
 }
 
 /*
 output:
-Minimum partition Required: 2
+Minimum partition Required: 0
 */
