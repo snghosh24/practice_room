@@ -30,7 +30,7 @@ Given an array arr[] which represents the chain of matrices such that the i-th m
  4. calculate cost for temporary answer
 
  */
-public class A_MatrixChainMultiplication {
+public class A_Recursive_MatrixChainMultiplication {
 	
 	public static int MatrixChainOrder(int arr[], int i, int j) {
 		
